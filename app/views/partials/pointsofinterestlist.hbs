@@ -6,13 +6,15 @@
         <tr>
             <th>Amount</th>
             <th>Method donated</th>
+            <th>image</th>
             <th>Donor</th>
         </tr>
         <tbody class="uk-text-left">
         {{#each pointsofinterest}}
             <tr>
-                <td>{{amount}}</td>
+                <td>{{email}}</td>
                 <td>{{method}}</td>
+                <td>{{image}}</td>
                 <td>{{donor.firstName}} {{donor.lastName}}</td>
             </tr>
         {{/each}}

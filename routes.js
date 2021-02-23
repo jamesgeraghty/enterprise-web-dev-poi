@@ -19,6 +19,8 @@ module.exports = [
 
     { method: "GET", path: "/home", config: PointsOfInterest.home },
     { method: "GET", path: "/report", config: PointsOfInterest.report },
+    { method: 'GET', path: '/settings', config: Accounts.showSettings },
+    { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
     {
         method: "GET",

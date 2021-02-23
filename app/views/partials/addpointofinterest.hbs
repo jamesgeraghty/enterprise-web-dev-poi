@@ -3,9 +3,14 @@
         <div class="uk-grid uk-grid-stack">
             <div class="uk-width-1-2@m">
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Enter a Place of Interest</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="number" name="amount" placeholder="Type here" />
+                    <label class="uk-form-label" for="form-stacked-text">Enter a Place of Interest</label><dl class="uk-description-list">
+                    <dt>DESCRIPTION TERM</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                </dl>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="email">E-Mail</label>
+                        <input type="text" name="email" id="form-s-text" placeholder="Enter your E-Mail address..." class="uk-input">
                     </div>
                 </div>
                 <div class="uk-margin">
@@ -14,6 +19,10 @@
                         <label><input class="uk-radio" type="radio" name="method" value="paypal" /> New</label><br />
                         <label><input class="uk-radio" type="radio" name="method" value="direct" /> Old </label>
                     </div>
+                </div>
+                <div class="js-upload" uk-form-custom>
+                    <input type="file" name="image" multiple>
+                    <button class="uk-button uk-button-default" type="button" name="image" tabindex="-1">Upload Image</button>
                 </div>
             </div>
             <div class=" uk-width-1-2@m">

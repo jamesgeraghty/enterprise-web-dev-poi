@@ -48,6 +48,21 @@ const Accounts = {
         },
     },
 
+    showSettings: {
+        handler: function(request, h) {
+            var donorEmail = request.auth.credentials.id;
+            const userDetails = this.users[donorEmail];
+            return h.view('settings', { title: 'Donation Settings', user: userDetails });
+        }
+    },
+    updateSettings: {
+        handler: function(request, h) {
+            const user = request.payload;
+            this.users[user.email] = user;
+            return h.redirect('/settings');
+        }
+    },
+
 
 
 };
