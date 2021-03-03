@@ -3,7 +3,7 @@
 const Accounts = require("./app/controllers/accounts");
 
 const PointsOfInterest = require("./app/controllers/pointsofinterest");
-
+//const dashboard = require('./controllers/dashboard.js');
 
 module.exports = [
     { method: "GET", path: "/", config: Accounts.index },
@@ -12,6 +12,7 @@ module.exports = [
     { method: "GET", path: "/logout", config: Accounts.logout },
     { method: "POST", path: "/signup", config: Accounts.signup },
     { method: "POST", path: "/login", config: Accounts.login },
+    { method: 'POST', path: '/addpointofinterest', config: PointsOfInterest.addpointofinterest },
 
 
 
@@ -20,7 +21,7 @@ module.exports = [
     { method: "GET", path: "/home", config: PointsOfInterest.home },
     { method: "GET", path: "/report", config: PointsOfInterest.report },
 
-    { method: 'POST', path: '/addpointofinterest', config: PointsOfInterest.addpointofinterest },
+
 
     { method: 'GET', path: '/settings', config: Accounts.showSettings },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },

@@ -1,14 +1,14 @@
-<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+<div class="uk-margin uk-width-10xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
     <table class="uk-table">
         <caption>
             Places of Interest
         </caption>
-        <tr>
+        <thead>
             <th>Amount</th>
-            <th>Method donated</th>
+            <th>Location</th>
             <th>image</th>
-            <th>email</th>
-        </tr>
+            <th>Donor</th>
+            </thead>
         <tbody class="uk-text-left">
         {{#each pointsofinterest}}
             <tr>
@@ -16,6 +16,8 @@
                 <td> {{method}} </td>
                 <td> {{image}} </td>
                 <td> {{email}}  </td>
+                <td> {{donor.firstName}} {{donor.lastName}} </td>
+
             </tr>
         {{/each}}
         </tbody>
