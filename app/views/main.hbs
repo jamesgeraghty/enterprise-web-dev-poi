@@ -7,12 +7,34 @@
     <div class="uk-child-width-expand uk-flex-center uk-flex-middle uk-text-center" uk-grid>
 
         <div class="uk-width-expand@m">
-            <h1 class="uk-heading-small">Welcome to Kilcash Castle</h1>
+            <h1 class="uk-heading-small">Welcome to Kilcash</h1>
             <p>Please don't litter our lovely areas</p>
         </div>
-        <div class="uk-width-auto@m">
-            <img width="300" src="images/kilcash-castle.jpg" />
-        </div>
+
         {{> error }}
     </div>
+    <div class="uk-position-relative" uk-slideshow="animation: fade">
+
+        <ul class="uk-slideshow-items">
+            <li>
+                <img src="images/20210221_143443.jpg" alt="" uk-cover>
+            </li>
+            <li>
+                <img src="images/20210221_145547.jpg" alt="" uk-cover>
+            </li>
+            <li>
+                <img src="images/20210221_145606.jpg" alt="" uk-cover>
+            </li>
+        </ul>
+
+        <div class="uk-position-bottom-center uk-position-small">
+            <ul class="uk-thumbnav">
+                <li uk-slideshow-item="0"><a href="#"><img src="images/20210221_143443.jpg" width="100" alt=""></a></li>
+                <li uk-slideshow-item="1"><a href="#"><img src="images/20210221_145547.jpg" width="100" alt=""></a></li>
+                <li uk-slideshow-item="2"><a href="#"><img src="images/20210221_145606.jpg" width="100" alt=""></a></li>
+            </ul>
+        </div>
+
+    </div>
+
 </div>

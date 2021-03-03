@@ -1,17 +1,51 @@
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
     <form class="uk-form-stacked uk-text-left" action="/addpointofinterest" method="POST">
         <div class="uk-grid uk-grid-stack">
-            <div class="uk-width-1-2@m">
+            <div class="uk-width-1-1@m">
+                <div class="uk-width-1-1@m">
+                    <form>
+                        <fieldset class="uk-fieldset">
+
+                            <legend class="uk-legend">Add New Point of Interest</legend>
+
+                            <div class="uk-margin">
+                                <input type="text" name="poi" id="form-s-text" placeholder="Enter a new Point of Interest..." class="uk-input">
+                            </div>
+
+                            <div class="uk-margin">
+                                <select class="uk-select">
+                                    <option>Mountain </option>
+                                    <option>Castle</option>
+                                </select>
+                            </div>
+
+                            <div class="uk-margin">
+                                <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
+                            </div>
+
+                            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                                <label><input class="uk-radio" type="radio" name="radio2" checked> A</label>
+                                <label><input class="uk-radio" type="radio" name="radio2"> B</label>
+                            </div>
+
+                            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                                <label><input class="uk-checkbox" type="checkbox" checked> A</label>
+                                <label><input class="uk-checkbox" type="checkbox"> B</label>
+                            </div>
+
+                            <div class="uk-margin">
+                                <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-stacked-text">Enter a Place of Interest</label><dl class="uk-description-list">
                     <dt>DESCRIPTION TERM</dt>
                     <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
                 </dl>
-
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="email">New Point Of Interest</label>
-                        <input type="text" name="amount" id="form-s-text" placeholder="Enter your E-Mail address..." class="uk-input">
-                    </div>
                 </div>
                 <div class="uk-margin">
                     <div class="uk-form-label">Payment</div>
@@ -24,7 +58,7 @@
 
                 <div class="js-upload" uk-form-custom>
                     <input type="file" name="image" multiple>
-                    <button class="uk-button uk-button-default" type="button" name="image" tabindex="-1">Upload Image</button>
+                    <button class="uk-button uk-button-default" type="upload" name="image" tabindex="-1">Upload Image</button>
                 </div>
 
 

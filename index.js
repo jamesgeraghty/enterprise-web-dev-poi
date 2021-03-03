@@ -60,3 +60,4 @@ process.on("unhandledRejection", (err) => {
 });
 
 init();
+//mongod -dbpath db

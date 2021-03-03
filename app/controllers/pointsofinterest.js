@@ -2,6 +2,13 @@
 const Newpointofinterest = require("../models/newpointofinterest");
 const User = require("../models/user");
 
+function uuidv4() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == "x" ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
 const PointsOfInterest  = {
     home: {
         handler: function (request, h) {
@@ -21,11 +28,12 @@ const PointsOfInterest  = {
     addpointofinterest: {
         handler: async function(request, h) {
             try {
+                id: uuidv4()
             const id = request.auth.credentials.id;
             const user = await User.findById(id);
             const data = request.payload;
             const newNewpointofinterest = new Newpointofinterest({
-                amount: data.amount,
+                poi: data.poi,
                 method: data.method,
                 image: data.image,
                 donor: user._id
