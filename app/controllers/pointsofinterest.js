@@ -34,8 +34,10 @@ const PointsOfInterest  = {
             const data = request.payload;
             const newNewpointofinterest = new Newpointofinterest({
                 poi: data.poi,
+                text: data.text,
                 method: data.method,
-                image: data.image,
+               // image: data.image,
+                checkbox:data.checkbox,
                 donor: user._id
             });
             await newNewpointofinterest.save();

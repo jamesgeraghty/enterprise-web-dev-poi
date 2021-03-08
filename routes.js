@@ -3,6 +3,7 @@
 const Accounts = require("./app/controllers/accounts");
 
 const PointsOfInterest = require("./app/controllers/pointsofinterest");
+const Admin = require("./app/controllers/admin");
 //const dashboard = require('./controllers/dashboard.js');
 
 module.exports = [
@@ -15,7 +16,7 @@ module.exports = [
     { method: 'POST', path: '/addpointofinterest', config: PointsOfInterest.addpointofinterest },
 
 
-
+    {method: 'GET',path: '/admindashboard', config: Admin.adminDashboard},
 
 
     { method: "GET", path: "/home", config: PointsOfInterest.home },

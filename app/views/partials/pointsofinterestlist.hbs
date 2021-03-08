@@ -7,19 +7,21 @@
             <th>Point of Interest</th>
             <th>Location</th>
             <th>image</th>
+            <th>terrain</th>
             <th>User Name</th>
+
             <th></th>
             </thead>
         <tbody class="uk-text-left">
         {{#each pointsofinterest}}
             <tr>
                 <td> {{poi}} </td>
+                <td> {{text}} </td>
                 <td> {{method}} </td>
-                <td> {{image}} </td>
-                <td> {{email}}  </td>
+                <td> {{checkbox}}  </td>
                 <td> {{donor.firstName}} {{donor.lastName}} </td>
                 <td>
-                    <!--      each member will have an id  -->
+
                     <a href="/dashboard/deleteassessment/{{id}}"  class="ui icon button">
                         <i class="icon trash"></i>
                 </td>
