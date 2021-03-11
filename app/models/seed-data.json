@@ -1,5 +1,6 @@
 {
   "users": {
+<<<<<<< HEAD
     "_model": "User",
     "homer": {
       "firstName": "Homer",
@@ -14,6 +15,15 @@
       "amount": 40,
       "method": "paypal",
       "donor": "->users.homer"
+=======
+    "marge": {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "numOfPoi": 4,
+      "scope": "admin"
+>>>>>>> parent of 98c3bdb... Updates to adding the Point of Interest dashboard
     }
   }
 }
