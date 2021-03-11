@@ -1,12 +1,43 @@
 {
   "users": {
+    "_model": "User",
+    "homer": {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret"
+    },
+
     "marge": {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
-      "password": "secret",
-      "numOfPoi": 4,
-      "scope": "admin"
+      "password": "secret"
+    },
+    "bart": {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret"
+    }
+  },
+  "newpointofinterest": {
+    "_model": "Newpointofinterest",
+    "one": {
+      "poi": 40,
+      "method": "paypal",
+      "text": "paypal",
+      "donor": "->users.bart"
+    },
+    "two": {
+      "amount": 90,
+      "method": "direct",
+      "donor": "->users.marge"
+    },
+    "three": {
+      "amount": 90,
+      "method": "direct",
+      "donor": "->users.marge"
     }
   }
 }
