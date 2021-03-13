@@ -1,38 +1,16 @@
 {
   "users": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> categories
     "_model": "User",
     "homer": {
       "firstName": "Homer",
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret"
-<<<<<<< HEAD
-    }
-  },
-  "donations": {
-    "_model": "Donation",
-    "one": {
-      "amount": 40,
-      "method": "paypal",
-      "donor": "->users.homer"
-=======
-=======
     },
->>>>>>> categories
     "marge": {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
-<<<<<<< HEAD
-      "password": "secret",
-      "numOfPoi": 4,
-      "scope": "admin"
->>>>>>> parent of 98c3bdb... Updates to adding the Point of Interest dashboard
-=======
       "password": "secret"
     },
     "bart": {
@@ -80,7 +58,6 @@
       "text": "paypal",
       "donor": "->users.marge",
       "category": "->categories.church"
->>>>>>> categories
     }
   }
 }
