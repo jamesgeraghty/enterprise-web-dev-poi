@@ -12,10 +12,13 @@
                                 <input type="text" name="poi" id="form-s-text" placeholder="Enter a new Point of Interest..." class="uk-input">
                             </div>
 
-                            <div class="uk-margin">
-                                <select class="uk-select">
-                                    <option>Mountain </option>
-                                    <option>Castle</option>
+                            <div class="field">
+                                <label>Category</label>
+
+                                <select name="category" class="ui fluid dropdown">
+                                    {{#each categories}}
+                                        <option value="{{name}}">{{name}}</option>
+                                    {{/each}}
                                 </select>
                             </div>
 
@@ -27,47 +30,36 @@
                                 <input type="text" name="method" rows="5" id="form-s-text" placeholder="Enter a new Point of Interest..." class="uk-input">
                             </div>
 
-                            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-                                <label><input class="uk-checkbox" type="checkbox" checked> A</label>
-                                <label><input class="uk-checkbox" type="checkbox"> B</label>
-                            </div>
-
-                            <div class="uk-margin">
-                                <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
-                            </div>
 
                         </fieldset>
                     </form>
                 </div>
 
-              <!--  <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Enter a Place of Interest</label><dl class="uk-description-list">
-                    <dt>DESCRIPTION TERM</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
-                </dl>
-                </div>
-                <div class="uk-margin">
-                    <div class="uk-form-label">Payment</div>
-                    <div class="uk-form-controls">
-                        <label><input class="uk-radio" type="radio" name="method" value="paypal" /> New</label><br />
-                        <label><input class="uk-radio" type="radio" name="method" value="direct" /> Old </label>
+                <div class=" uk-width-1-2@m">
+                    <div class="uk-margin uk-text-left">
+                        <div class="uk-form-label">Select Candidate</div>
+                        <div class="uk-form-controls ">
+                            {{#each categories }}
+                                <label>
+                                    <input class="uk-checkbox" type="checkbox" name="category" value="{{name}}" /> {{name}}</label>
+                                <br />
+                            {{/each}}
+                        </div>
                     </div>
-              </div>
-                <div class="column two wide"></div>-->
 
-                <div class="js-upload" uk-form-custom>
-                    <input type="file" name="image" multiple>
-                    <button class="uk-button uk-button-default" type="upload" name="image" tabindex="-1">Upload Image</button>
-                </div>
+                    <div class="js-upload" uk-form-custom>
+                        <input type="file" name="image" multiple>
+                        <button class="uk-button uk-button-default" type="upload" name="image" tabindex="-1">Upload Image</button>
+                    </div>
 
 
                     <div class="uk-margin">
-                    <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add</button>
+                        <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add</button>
+                    </div>
+                </div>
+                <div class=" uk-width-1-2@m">
+
                 </div>
             </div>
-            <div class=" uk-width-1-2@m">
-
-            </div>
-        </div>
     </form>
 </div>

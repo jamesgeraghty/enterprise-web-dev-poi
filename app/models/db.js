@@ -19,14 +19,16 @@ db.on("disconnected", function() {
     console.log("database disconnected");
 });
 
-db.once("open", function() {
+db.once('open', function () {
     console.log(`database connected to ${this.name} on ${this.host}`);
+    seed();
 });
 
 async function seed() {
     var seeder = require('mais-mongoose-seeder')(Mongoose);
     const data = require('./seed-data.json');
     const Newpointofinterest = require('./newpointofinterest');
+    const Category = require('./category');
     const User = require('./user');
     const dbData = await seeder.seed(data, { dropDatabase: false, dropCollections: true });
     console.log(dbData);

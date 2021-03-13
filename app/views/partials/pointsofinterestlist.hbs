@@ -4,14 +4,16 @@
             Places of Interest
         </caption>
         <thead>
-            <th>Point of Interest</th>
-            <th>Location</th>
-            <th>image</th>
-            <th>terrain</th>
-            <th>User Name</th>
+        <th>Point of Interest</th>
+        <th>Location</th>
+        <th>image</th>
+        <th>terrain</th>
+        <th>User Name</th>
+        <th>Candidate</th>
 
-            <th></th>
-            </thead>
+
+        <th></th>
+        </thead>
         <tbody class="uk-text-left">
         {{#each pointsofinterest}}
             <tr>
@@ -20,6 +22,7 @@
                 <td> {{method}} </td>
                 <td> {{checkbox}}  </td>
                 <td> {{donor.firstName}} {{donor.lastName}} </td>
+                <td>{{category.name}}</td>
                 <td>
 
                     <a href="/dashboard/deleteassessment/{{id}}"  class="ui icon button">
