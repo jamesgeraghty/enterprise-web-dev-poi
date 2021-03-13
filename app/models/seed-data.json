@@ -7,7 +7,6 @@
       "email": "homer@simpson.com",
       "password": "secret"
     },
-
     "marge": {
       "firstName": "Marge",
       "lastName": "Simpson",
@@ -21,23 +20,44 @@
       "password": "secret"
     }
   },
-  "newpointofinterest": {
+  "categories": {
+    "_model": "Category",
+    "walks": {
+      "name": "Slievenamon"
+
+    },
+    "woods": {
+      "name": "Kilcash Woods"
+
+    },
+
+    "church": {
+      "name": "Kilcash Church"
+    }
+  },
+
+  "pointsofinterest": {
     "_model": "Newpointofinterest",
     "one": {
-      "poi": 40,
+      "poi": "paypal",
       "method": "paypal",
       "text": "paypal",
-      "donor": "->users.bart"
+      "donor": "->users.marge",
+      "category": "->categories.walks"
     },
     "two": {
-      "amount": 90,
-      "method": "direct",
-      "donor": "->users.marge"
+      "poi": "paypal",
+      "method": "paypal",
+      "text": "paypal",
+      "donor": "->users.marge",
+      "category": "->categories.woods"
     },
     "three": {
-      "amount": 90,
-      "method": "direct",
-      "donor": "->users.marge"
+      "poi": "paypal",
+      "method": "paypal",
+      "text": "paypal",
+      "donor": "->users.marge",
+      "category": "->categories.church"
     }
   }
 }
