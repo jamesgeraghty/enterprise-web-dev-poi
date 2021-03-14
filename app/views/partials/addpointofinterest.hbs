@@ -5,61 +5,38 @@
                 <div class="uk-width-1-1@m">
                     <form>
                         <fieldset class="uk-fieldset">
-
                             <legend class="uk-legend">Add New Point of Interest</legend>
-
                             <div class="uk-margin">
                                 <input type="text" name="poi" id="form-s-text" placeholder="Enter a new Point of Interest..." class="uk-input">
                             </div>
-
-                            <div class="field">
-                                <label>Category</label>
-
-                                <select name="category" class="ui fluid dropdown">
-                                    {{#each categories}}
-                                        <option value="{{name}}">{{name}}</option>
-                                    {{/each}}
-                                </select>
-                            </div>
-
                             <div class="uk-margin">
-                                <input type="text" name="text" rows="5" id="form-s-text" placeholder="Enter a new Point of Interest..." class="uk-input">
-                            </div>
-
-                            <div class="uk-margin">
-                                <input type="text" name="method" rows="5" id="form-s-text" placeholder="Enter a new Point of Interest..." class="uk-input">
-                            </div>
-
-
+                                <label class="uk-form-label" for="form-stacked-select">Select</label>
+                                <div class="uk-form-controls">
+                                    <select name="category" class="uk-select">
+                                        {{#each categories}}
+                                            <option value="{{name}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="uk-margin">
+                                    <input type="text" name="text" rows="5" id="form-s-text" placeholder="Enter a new Point of Interest..." class="uk-input">
+                                </div>
+                                <div class="uk-margin">
+                                    <input type="text" name="method" rows="5" id="form-s-text" placeholder="Enter a new Point of Interest..." class="uk-input">
+                                </div>
                         </fieldset>
                     </form>
                 </div>
-
-                <div class=" uk-width-1-2@m">
-                    <div class="uk-margin uk-text-left">
-                        <div class="uk-form-label">Select Candidate</div>
-                        <div class="uk-form-controls ">
-                            {{#each categories }}
-                                <label>
-                                    <input class="uk-checkbox" type="checkbox" name="category" value="{{name}}" /> {{name}}</label>
-                                <br />
-                            {{/each}}
-                        </div>
-                    </div>
-
-                    <div class="js-upload" uk-form-custom>
-                        <input type="file" name="image" multiple>
-                        <button class="uk-button uk-button-default" type="upload" name="image" tabindex="-1">Upload Image</button>
-                    </div>
-
-
-                    <div class="uk-margin">
-                        <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add</button>
-                    </div>
+                <div class="js-upload" uk-form-custom>
+                    <input type="file" name="image" multiple>
+                    <button class="uk-button uk-button-default" type="upload" name="image" tabindex="-1">Upload Image</button>
                 </div>
-                <div class=" uk-width-1-2@m">
-
+                <div class="uk-margin">
+                    <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add Point of Interest</button>
                 </div>
             </div>
+            <div class=" uk-width-1-2@m">
+            </div>
+        </div>
     </form>
 </div>

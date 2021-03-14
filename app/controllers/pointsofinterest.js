@@ -3,12 +3,7 @@ const Newpointofinterest = require("../models/newpointofinterest");
 const User = require("../models/user");
 const Category = require("../models/category");
 
-function uuidv4() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16 | 0, v = c == "x" ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
-}
+
 
 const PointsOfInterest  = {
     home: {
@@ -50,9 +45,29 @@ const PointsOfInterest  = {
                 await newNewpointofinterest.save();
                 return h.redirect("/report");
             } catch (err) {
-                return h.view("main", { errors: [{ message: err.message }] });
+                return h.view("main", { errors: [{ message: err.message }]
+                });
             }
         }
-    }
+    },
+
+    removepointofinterest: {
+        handler: async function (request, h) {
+            try {
+                const pointofinterest = Newpointofinterest.findById(request.params._id);
+                console.log("Removing pointofinterest: " + pointofinterest);
+                await pointofinterest.remove();
+                return h.redirect("/report");
+            } catch
+                (err) {
+                return h.view('home', {errors: [{message: err.message}]});
+            }
+        },
+
+    },
+
+
+
+
 };
 module.exports = PointsOfInterest;
