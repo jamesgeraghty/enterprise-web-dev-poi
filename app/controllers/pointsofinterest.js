@@ -9,7 +9,7 @@ const PointsOfInterest  = {
     home: {
         handler: async function (request, h) {
             const categories = await Category.find().lean();
-            return h.view("home", { title: "Add POI",categories: categories });
+            return h.view("home", {title: "Add POI", categories: categories});
         },
     },
 
@@ -23,7 +23,7 @@ const PointsOfInterest  = {
         },
     },
     addpointofinterest: {
-        handler: async function(request, h) {
+        handler: async function (request, h) {
             try {
                 //   id: uuidv4()
                 const id = request.auth.credentials.id;
@@ -45,7 +45,8 @@ const PointsOfInterest  = {
                 await newNewpointofinterest.save();
                 return h.redirect("/report");
             } catch (err) {
-                return h.view("main", { errors: [{ message: err.message }]
+                return h.view("main", {
+                    errors: [{message: err.message}]
                 });
             }
         }
