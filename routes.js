@@ -3,6 +3,7 @@
 const Accounts = require("./app/controllers/accounts");
 
 const PointsOfInterest = require("./app/controllers/pointsofinterest");
+const Category =require("./app/controllers/categories-controller")
 const Admin = require("./app/controllers/admin");
 //const dashboard = require('./controllers/dashboard.js');
 
@@ -22,7 +23,12 @@ module.exports = [
     { method: "GET", path: "/home", config: PointsOfInterest.home },
     { method: "GET", path: "/report", config: PointsOfInterest.report },
 
-    { method: "GET", path: "/delete-pointofinterest/{{_id}}", config: PointsOfInterest.removepointofinterest},
+    { method: "GET", path: "/delete-pointofinterest/{_id}", config: PointsOfInterest.removepointofinterest },
+
+
+
+    {method: 'POST', path: '/new-category', config: Category.addCategory},
+
 
     { method: 'GET', path: '/settings', config: Accounts.showSettings },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
