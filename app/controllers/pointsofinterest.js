@@ -74,8 +74,8 @@ const PointsOfInterest  = {
                 console.log(newpointofinterest);
                 const category = await Category.find().lean();
 
-
-                return h.view("update-pointofinterest", { title: "Edit Poi", newpointofinterest: newpointofinterest});
+                const categories = await Category.find().lean().sort('name');
+                return h.view("update-pointofinterest", { title: "Edit Poi", newpointofinterest: newpointofinterest, categories: categories,});
             } catch (err) {
                 return h.view("home", { errors: [{ message: err.message }] });
             }
@@ -109,14 +109,19 @@ const PointsOfInterest  = {
         {
             try
             {
-                console.log(newpointofinterest);
+
                 const newpointofinterestEdit = request.payload;
                 const newpointofinterest = await Newpointofinterest.findById(request.params._id);
+                console.log(newpointofinterest);
+                const rawCategory = newpointofinterestEdit.category;
+                const category = await Category.findOne({
+                    name: rawCategory
+                }).lean();
 
                 newpointofinterest.poi = newpointofinterestEdit.poi;
                 newpointofinterest.method = newpointofinterestEdit.method;
                 newpointofinterest.text = newpointofinterestEdit.text;
-                newpointofinterest.category = newpointofinterestEdit.category;
+                newpointofinterest.category = category._id;
                 await newpointofinterest.save();
                 return h.redirect('/report');
             } catch (err)

@@ -25,7 +25,7 @@ module.exports = [
 
     { method: "GET", path: "/delete-pointofinterest/{_id}", config: PointsOfInterest.removepointofinterest },
     {method: 'GET', path: '/update-pointofinterest/{_id}', config: PointsOfInterest.showUpdatePointofinterest},
-    {method: 'POST', path: "/update-pointofinterest/{_id}", config: PointsOfInterest.updatePointofinterest},
+    {method: 'POST', path: "/update_pointofinterest/{_id}", config: PointsOfInterest.updatePointofinterest},
 
 
 
