@@ -22,7 +22,7 @@ const Category = {
                     name: data.name,
                 });
                 await newCategory.save();
-                return h.redirect("/report");
+                return h.redirect("/home");
             } catch (err) {
                 return h.view("main", { errors: [{ message: err.message }]
                 });

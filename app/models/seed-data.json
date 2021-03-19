@@ -39,23 +39,23 @@
   "pointsofinterest": {
     "_model": "Newpointofinterest",
     "one": {
-      "poi": "paypal",
-      "method": "paypal",
-      "text": "paypal",
+      "poi": "Slievenamon Walk",
+      "method": "8",
+      "text": "Through Kilcash and take the first left",
       "donor": "->users.marge",
       "category": "->categories.walks"
     },
     "two": {
-      "poi": "paypal",
-      "method": "paypal",
-      "text": "paypal",
+      "poi": "Kilcash Woods 5 km loop",
+      "method": "5",
+      "text": "Follow the directions to Kilcash Castle",
       "donor": "->users.marge",
       "category": "->categories.woods"
     },
     "three": {
-      "poi": "paypal",
-      "method": "paypal",
-      "text": "paypal",
+      "poi": "Kilcash church monument",
+      "method": "2",
+      "text": "Follow the directions to Kilcash Castle",
       "donor": "->users.marge",
       "category": "->categories.church"
     }
