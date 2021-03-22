@@ -5,6 +5,12 @@
 ## Read Me
 James Geraghty 20022946 - Enterprise Website Development - POI Core
 
+
+> **Delopyed **
+---
+- [Glitch Deployed](https://fan-adorable-flannel.glitch.me/)
+- [heroku delpoyed](https://gentle-peak-56392.herokuapp.com/)
+
 ---
 
 > **Description**
@@ -15,7 +21,7 @@ Implemented the Core POI and some features from the enhanced.
 
 <p>&nbsp;</p>
 
->**Tools annd Technologies Used**
+> **Tools annd Technologies Used**
 ---
 - Hapi Framework
 - Hapi Joi
@@ -29,10 +35,6 @@ Implemented the Core POI and some features from the enhanced.
 - Heroku
 
 
->**Delopyed **
----
-- [Glitch Deployed](https://fan-adorable-flannel.glitch.me/)
-- [heroku delpoyed](https://gentle-peak-56392.herokuapp.com/)
 
 
 <p>&nbsp;</p>
