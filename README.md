@@ -18,18 +18,20 @@ Implemented the Core POI and some features from the enhanced.
 >**Tools annd Technologies Used**
 ---
 - Hapi Framework
-
+- Hapi Joi
+- Hapi Inert
 - Node JS
 - Cloud Atlas
 - Cloudinary
 - Mongoose
 - Handlebars
-- 
+- Glitch
+- Heroku
 
 
 <p>&nbsp;</p>
 
 ---
-Glitch Deployed: https://fan-adorable-flannel.glitch.me/
-heroku delpoyed : https://gentle-peak-56392.herokuapp.com/
+-Glitch Deployed: https://fan-adorable-flannel.glitch.me/
+-heroku delpoyed : https://gentle-peak-56392.herokuapp.com/
 <p>&nbsp;</p>
