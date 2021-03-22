@@ -32,7 +32,7 @@ Implemented the Core POI and some features from the enhanced.
 >**Delopyed **
 ---
 - [Glitch Deployed](https://fan-adorable-flannel.glitch.me/)
-- heroku delpoyed : https://gentle-peak-56392.herokuapp.com/
+- [heroku delpoyed](https://gentle-peak-56392.herokuapp.com/)
 
 
 <p>&nbsp;</p>
