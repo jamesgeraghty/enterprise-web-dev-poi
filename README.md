@@ -29,8 +29,7 @@ Implemented the Core POI and some features from the enhanced.
 - Heroku
 
 
-<p>&nbsp;</p>
-
+>**Delopyed **
 ---
 - Glitch Deployed: https://fan-adorable-flannel.glitch.me/
 - heroku delpoyed : https://gentle-peak-56392.herokuapp.com/
