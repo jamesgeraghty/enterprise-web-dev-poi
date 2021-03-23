@@ -5,6 +5,7 @@ const Accounts = require("./app/controllers/accounts");
 const PointsOfInterest = require("./app/controllers/pointsofinterest");
 const Category =require("./app/controllers/categories-controller")
 const Admin = require("./app/controllers/admin");
+const Gallery = require('./app/controllers/gallery');
 //const dashboard = require('./controllers/dashboard.js');
 
 module.exports = [
@@ -15,7 +16,11 @@ module.exports = [
     { method: "POST", path: "/signup", config: Accounts.signup },
     { method: "POST", path: "/login", config: Accounts.login },
     { method: 'POST', path: '/addpointofinterest', config: PointsOfInterest.addpointofinterest },
+    {method: "GET" ,path: "/deleteUser", config: Accounts.deleteUser},
 
+    { method: 'GET', path: '/gallery', config: Gallery.index },
+    { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
+    { method: 'GET', path: '/deleteimage/{id}', config: Gallery.deleteImage },
 
     {method: 'GET',path: '/admindashboard', config: Admin.adminDashboard},
 

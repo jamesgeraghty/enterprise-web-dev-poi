@@ -161,6 +161,26 @@ const Accounts = {
             }
         },
     },
+
+    deleteUser: {
+
+        handler: async function (request, h) {
+            try {
+                const id = request.auth.credentials.id;
+                const user = await User.findById(id);
+                console.log("Deleting User: " + user);
+                await user.remove();
+                return h.redirect("/home");
+            } catch
+                (err) {
+                return h.view('home', {errors: [{message: err.message}]});
+            }
+        },
+    },
+
+
+
+    
 };
 
 //const User = require('../models/user');
