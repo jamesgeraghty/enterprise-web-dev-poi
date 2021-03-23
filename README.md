@@ -7,7 +7,7 @@ James Geraghty 20022946 - Enterprise Website Development - POI Core
 
 
 > **Delopyed**
-- [Glitch Deployed](https://fan-adorable-flannel.glitch.me/)
+- [Glitch Deployed](https://wind-elderly-scraper.glitch.me/)
 - [heroku delpoyed](https://gentle-peak-56392.herokuapp.com/)
 
 ---
