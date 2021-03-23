@@ -1,17 +1,17 @@
 <div class="uk-margin uk-width-10xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
     <table class="uk-table uk-table-striped">
         <caption>
-            Places of Interest
+            <h2>Places of Interest in Kilcash</h2>
         </caption>
         <thead>
         <th>Point of Interest</th>
         <th>Location</th>
-        <th>image</th>
+        <th>Difficulty</th>
         <th>User Name</th>
         <th>Categories</th>
         <th>Gallery</th>
-        <td></td>
-        <td></td>
+        <th> Delete</th>
+        <th> Update</th>
 
 
 
@@ -26,10 +26,10 @@
                 <td> {{donor.firstName}} {{donor.lastName}} </td>
                 <td>{{category.name}}</td>
                 <td><a href="/gallery" class="fas fa-camera fa-1x"></a></td>
-                <td colspan="1">
+
                 <td><a href="/delete-pointofinterest/{{_id}}" ><i title="Delete Point Of Interest" class="far fa-trash-alt fa-1x"></i></td>
-                <td colspan="1">
-                    <a href='/update-pointofinterest/{{_id}}' class="ui icon button">Update</a>
+               <td>
+                    <a href='/update-pointofinterest/{{_id}}' > <i title="Delete Point Of Interest" class="far fa-edit fa-1x"></i>
                 </td>
 
             </tr>

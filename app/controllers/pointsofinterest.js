@@ -65,7 +65,7 @@ const PointsOfInterest  = {
         },
 
     },
-
+// displays the points of interest in the form before being updated
     showUpdatePointofinterest: {
         handler: async function(request, h) {
             try {
