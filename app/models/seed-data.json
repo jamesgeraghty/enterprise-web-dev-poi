@@ -42,14 +42,14 @@
       "poi": "Slievenamon Walk",
       "method": "8",
       "text": "Through Kilcash and take the first left",
-      "donor": "->users.marge",
+      "donor": "->users.homer",
       "category": "->categories.walks"
     },
     "two": {
       "poi": "Kilcash Woods 5 km loop",
       "method": "5",
       "text": "Follow the directions to Kilcash Castle",
-      "donor": "->users.marge",
+      "donor": "->users.bart",
       "category": "->categories.woods"
     },
     "three": {
