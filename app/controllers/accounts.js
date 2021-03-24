@@ -2,7 +2,7 @@
 const User = require("../models/user");
 const Boom = require("@hapi/boom");
 const Joi = require("@hapi/joi");
-
+// account controller, inlcudes contoller for signup, login,update and deleting a user
 const Accounts = {
     index: {
         auth: false,
@@ -19,7 +19,7 @@ const Accounts = {
     signup: {
         auth: false,
         validate: {
-            payload: {
+            payload: { // validation field for sign up
                 firstName: Joi.string().required(),
                 lastName: Joi.string().required(),
                 email: Joi.string().email().required(),
@@ -61,14 +61,14 @@ const Accounts = {
         },
     },
 
-
+// diplays the login form
     showLogin: {
         auth: false,
         handler: function(request, h) {
             return h.view('login', { title: 'Login to POI' });
         }
     },
-
+// allows the user to login, JOI used to for user validation
     login: {
         auth: false,
         validate: {
@@ -112,7 +112,7 @@ const Accounts = {
             return h.redirect("/");
         },
     },
-
+// displays the users settings
     showSettings: {
         handler: async function (request, h) {
             try {
@@ -124,9 +124,10 @@ const Accounts = {
             }
         }
     },
+    // allows the user to update ther setting if required
     updateSettings: {
         validate: {
-            payload: {
+            payload: { // JOI validation is used to verfiry the user has enter all the correct fields
                 firstName: Joi.string().required(),
                 lastName: Joi.string().required(),
                 email: Joi.string().email().required(),
@@ -161,7 +162,7 @@ const Accounts = {
             }
         },
     },
-
+// the user account can be deleted
     deleteUser: {
 
         handler: async function (request, h) {
