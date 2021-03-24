@@ -1,7 +1,10 @@
 'use strict';
 
 const ImageStore = require('../utils/image-store');
+/*
 
+The Gallery controller allows the user to upload and delete a an image
+ */
 const Gallery = {
     index: {
         handler: async function(request, h) {

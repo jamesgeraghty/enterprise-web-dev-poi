@@ -3,6 +3,8 @@
 const env = require('dotenv');
 env.config();
 
+// connection to the Mongo DB
+
 const Mongoose = require("mongoose");
 
 Mongoose.set("useNewUrlParser", true);

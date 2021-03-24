@@ -6,7 +6,9 @@ const Newpointofinterest = require('../models/newpointofinterest');
 const User = require("../models/user");
 const Joi = require('@hapi/joi');
 
-
+/*
+The category controller allows the user to add a category if required
+ */
 const Category = {
 
     addCategory: {

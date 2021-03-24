@@ -3,7 +3,12 @@ const Newpointofinterest = require("../models/newpointofinterest");
 const User = require("../models/user");
 const Category = require("../models/category");
 const Joi = require('@hapi/joi');
+/*
+This the controller for adding, updateing and deleting the
+points of Interest.
 
+
+ */
 const PointsOfInterest  = {
     home: {
         handler: async function (request, h) {
@@ -50,6 +55,8 @@ const PointsOfInterest  = {
             }
         }
     },
+
+// allows the user to delete a Point of Interest
 
     removepointofinterest: {
         handler: async function (request, h) {

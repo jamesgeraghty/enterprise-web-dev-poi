@@ -2,7 +2,10 @@
 
 const Mongoose = require("mongoose");
 const Schema = Mongoose.Schema;
+/*
 
+Information about the Point of Interest is stored here
+ */
 const newpointofinterestSchema = new Schema({
     poi: String,
     method: String,

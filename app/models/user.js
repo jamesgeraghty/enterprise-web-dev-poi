@@ -1,5 +1,8 @@
 "use strict";
+/*
 
+
+ */
 const Mongoose = require("mongoose");
 const Schema = Mongoose.Schema;
 const Boom = require("@hapi/boom");
@@ -11,7 +14,7 @@ const userSchema = new Schema({
     password: String
 });
 
-
+// makes sure the password matches the email, if it does not returns a boom error
 
 userSchema.methods.comparePassword = function(candidatePassword) {
     const isMatch = this.password === candidatePassword;
@@ -21,6 +24,7 @@ userSchema.methods.comparePassword = function(candidatePassword) {
     return this;
 };
 
+// makes sure that the email is correct and matches the records
 userSchema.statics.findByEmail = function(email) {
     return this.findOne({ email : email});
 };
