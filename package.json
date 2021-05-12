@@ -19,8 +19,10 @@
     "cloudinary": "^1.25.0",
     "dotenv": "^8.2.0",
     "handlebars": "^4.7.7",
+    "leaflet": "^1.7.1",
     "mais-mongoose-seeder": "^1.0.7",
     "mongoose": "^5.11.17",
+    "sanitize-html": "^2.3.3",
     "util": "^0.12.3"
   },
   "devDependencies": {

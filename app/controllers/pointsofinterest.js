@@ -43,6 +43,8 @@ const PointsOfInterest  = {
                     poi: data.poi,
                     text: data.text,
                     method: data.method,
+                    latitude: data.latitude,
+                    longitude: data.longitude,
                     donor: user._id,
                     category: category._id,
                 });

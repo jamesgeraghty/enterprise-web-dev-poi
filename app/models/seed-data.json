@@ -41,6 +41,8 @@
     "one": {
       "poi": "Slievenamon Walk",
       "method": "8",
+      "latitude": "52.42818",
+      "longitude": "-7.56389",
       "text": "Through Kilcash and take the first left",
       "donor": "->users.homer",
       "category": "->categories.walks"
@@ -48,6 +50,8 @@
     "two": {
       "poi": "Kilcash Woods 5 km loop",
       "method": "5",
+      "latitude": "52.40342",
+      "longitude": "-7.54165",
       "text": "Follow the directions to Kilcash Castle",
       "donor": "->users.bart",
       "category": "->categories.woods"
@@ -55,6 +59,8 @@
     "three": {
       "poi": "Kilcash church monument",
       "method": "2",
+      "latitude": "52.3969",
+      "longitude": "-7.5227",
       "text": "Follow the directions to Kilcash Castle",
       "donor": "->users.marge",
       "category": "->categories.church"

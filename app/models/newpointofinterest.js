@@ -10,6 +10,8 @@ const newpointofinterestSchema = new Schema({
     poi: String,
     method: String,
     text: String,
+    latitude: Number,
+    longitude: Number,
     donor: {
         type: Schema.Types.ObjectId,
         ref: "User",
