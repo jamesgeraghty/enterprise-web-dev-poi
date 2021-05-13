@@ -2,6 +2,8 @@
 const User = require("../models/user");
 const Boom = require("@hapi/boom");
 const Joi = require("@hapi/joi");
+const bcrypt = require("bcrypt");          // ADDED
+const saltRounds = 10;
 // account controller, inlcudes contoller for signup, login,update and deleting a user
 const Accounts = {
     index: {
@@ -19,11 +21,15 @@ const Accounts = {
     signup: {
         auth: false,
         validate: {
-            payload: { // validation field for sign up
-                firstName: Joi.string().required(),
-                lastName: Joi.string().required(),
+            payload: {
+                // begin with upper case letter and then 2+ lower case letters
+                firstName: Joi.string().regex(/^[A-Z][a-z]{2,}$/),
+
+                // begin with upper case letter, then any 2+ characters
+                lastName: Joi.string().regex(/^[A-Z]/).min(3),
                 email: Joi.string().email().required(),
-                password: Joi.string().required(),
+
+                password: Joi.string().min(8)               // min 8 characters
             },
             options: {
                 abortEarly: false,
@@ -46,11 +52,14 @@ const Accounts = {
                     const message = "Email address is already registered";
                     throw Boom.badData(message);
                 }
+
+                const hash = await bcrypt.hash(payload.password, saltRounds);
+
                 const newUser = new User({
                     firstName: payload.firstName,
                     lastName: payload.lastName,
                     email: payload.email,
-                    password: payload.password,
+                    password: hash
                 });
                 user = await newUser.save();
                 request.cookieAuth.set({ id: user.id });
@@ -97,7 +106,7 @@ const Accounts = {
                     const message = "Email address is not registered";
                     throw Boom.unauthorized(message);
                 }
-                user.comparePassword(password);
+                await user.comparePassword(password);
                 request.cookieAuth.set({ id: user.id });
                 return h.redirect("/home");
             } catch (err) {
