@@ -4,6 +4,7 @@ const Boom = require("@hapi/boom");
 const Joi = require("@hapi/joi");
 const bcrypt = require("bcrypt");          // ADDED
 const saltRounds = 10;
+const sanitizeHtml = require("sanitize-html");
 // account controller, inlcudes contoller for signup, login,update and deleting a user
 const Accounts = {
     index: {
@@ -56,10 +57,10 @@ const Accounts = {
                 const hash = await bcrypt.hash(payload.password, saltRounds);
 
                 const newUser = new User({
-                    firstName: payload.firstName,
-                    lastName: payload.lastName,
-                    email: payload.email,
-                    password: hash
+                    firstName: sanitizeHtml(payload.firstName),
+                    lastName: sanitizeHtml(payload.lastName),
+                    email: sanitizeHtml(payload.email),
+                    password: sanitizeHtml(hash)
                 });
                 user = await newUser.save();
                 request.cookieAuth.set({ id: user.id });
