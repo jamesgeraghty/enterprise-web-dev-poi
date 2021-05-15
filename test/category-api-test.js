@@ -10,7 +10,7 @@ suite("category API tests", function () {
     let newCategory = fixtures.newCategory;
 
 
-    const poiService = new PoiService("http://LAPTOP-BURPBOF6:3000");
+    const poiService = new PoiService("http://LAPTOP-BURPBOF6:4000");
 
 
     setup(async function () {
