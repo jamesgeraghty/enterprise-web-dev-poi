@@ -21,5 +21,7 @@ module.exports = [
     { method: "POST", path: "/api/poi", config: Pointsofinterest.create },
     { method: "DELETE", path: "/api/poi/{id}", config: Pointsofinterest.deleteOne },
     { method: "DELETE", path: "/api/poi", config: Pointsofinterest.deleteAll },
+
+  { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate },
 ];
 

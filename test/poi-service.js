@@ -1,7 +1,7 @@
 "use strict";
 
 const axios = require("axios");
-const baseUrl = "http://LAPTOP-BURPBOF6:4000";
+const baseUrl = "http://LAPTOP-BURPBOF6:3000";
 
 class PoiService {
     constructor(baseUrl) {
@@ -128,6 +128,19 @@ class PoiService {
         }
     }
 
+    async authenticate(user) {
+        try {
+            const response = await axios.post(this.baseUrl + "/api/users/authenticate", user);
+            axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async clearAuth(user) {
+        axios.defaults.headers.common["Authorization"] = "";
+    }
 }
 
 

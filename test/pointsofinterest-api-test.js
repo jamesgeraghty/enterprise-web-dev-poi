@@ -46,25 +46,6 @@ suite("POI API tests", function () {
         assert(p == null);
     });
 
-    test("Get All Pois", async function () {
-        for (let p of pointsofinterest) {
-            await poiService.createPointofinterest(p);
-        }
-
-        const allPois = await poiService.getPointofinterest();
-        assert.equal(allPois.length, pointsofinterest.length);
-    });
-
-    test("Get POIs Detail", async function () {
-        for (let p of pointsofinterest) {
-            await poiService.createPointofinterest(p);
-        }
-
-        const allPois = await poiService.getPointofinterest();
-        for (var i = 0; i < pointsofinterest.length; i++) {
-            assert(_.some([allPois[i]], pointsofinterest[i]), "returnedPoi must be a superset of newPoi");
-        }
-    });
 
 
 });
