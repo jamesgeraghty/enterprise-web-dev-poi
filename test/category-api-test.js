@@ -9,9 +9,19 @@ suite("category API tests", function () {
     let categories = fixtures.categories;
     let newCategory = fixtures.newCategory;
 
+    const poiService = new PoiService(fixtures.poiService);
+    let newUser = fixtures.newUser;
 
-    const poiService = new PoiService("http://LAPTOP-BURPBOF6:4000");
+    suiteSetup(async function () {
+        await poiService.deleteAllUsers();
+        const returnedUser = await poiService.createUser(newUser);
+        const response = await poiService.authenticate(newUser);
+    });
 
+    suiteTeardown(async function () {
+        await poiService.deleteAllUsers();
+        poiService.clearAuth();
+    });
 
     setup(async function () {
         await poiService.deleteAllCategories();

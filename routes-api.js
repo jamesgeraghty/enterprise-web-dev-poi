@@ -1,5 +1,7 @@
 const Categories = require('./app/api/categories');
 const Users = require("./app/api/users");
+const Pointsofinterest = require('./app/api/poi');
+
 
 module.exports = [
     { method: 'GET', path: '/api/categories', config: Categories.find },
@@ -13,4 +15,13 @@ module.exports = [
     { method: "POST", path: "/api/users", config: Users.create },
     { method: "DELETE", path: "/api/users/{id}", config: Users.deleteOne },
     { method: "DELETE", path: "/api/users", config: Users.deleteAll },
+
+    { method: "GET", path: "/api/poi", config: Pointsofinterest.find },
+    { method: "GET", path: "/api/poi/{id}", config: Pointsofinterest.findOne },
+    { method: "POST", path: "/api/poi", config: Pointsofinterest.create },
+    { method: "DELETE", path: "/api/poi/{id}", config: Pointsofinterest.deleteOne },
+    { method: "DELETE", path: "/api/poi", config: Pointsofinterest.deleteAll },
+
+  { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate },
 ];
+

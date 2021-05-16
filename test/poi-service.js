@@ -1,7 +1,7 @@
 "use strict";
 
 const axios = require("axios");
-const baseUrl = "http://LAPTOP-BURPBOF6:4000";
+const baseUrl = "http://LAPTOP-BURPBOF6:3000";
 
 class PoiService {
     constructor(baseUrl) {
@@ -85,7 +85,7 @@ class PoiService {
     }
     async getPoitsofinterest() {
         try {
-            const response = await axios.get(this.baseUrl + "/api/pointsofinterest");
+            const response = await axios.get(this.baseUrl + "/api/poi");
             return response.data;
         } catch (e) {
             return null;
@@ -94,16 +94,16 @@ class PoiService {
 
     async getPointofinterest(id) {
         try {
-            const response = await axios.get(this.baseUrl + "/api/pointsofinterest/" + id);
+            const response = await axios.get(this.baseUrl + "/api/poi/" + id);
             return response.data;
         } catch (e) {
             return null;
         }
     }
 
-    async createPointofinterest(newPoi) {
+    async createPointofinterest(newPointofinterest) {
         try {
-            const response = await axios.post(this.baseUrl + "/api/pointsofinterest", newPoi);
+            const response = await axios.post(this.baseUrl + "/api/poi", newPointofinterest);
             return response.data;
         } catch (e) {
             return null;
@@ -112,7 +112,7 @@ class PoiService {
 
     async deleteAllPointsofinterst() {
         try {
-            const response = await axios.delete(this.baseUrl + "/api/pointsofinterest");
+            const response = await axios.delete(this.baseUrl + "/api/poi");
             return response.data;
         } catch (e) {
             return null;
@@ -121,13 +121,26 @@ class PoiService {
 
     async deleteOnePointofinterst(id) {
         try {
-            const response = await axios.delete(this.baseUrl + "/api/pointsofinterest/" + id);
+            const response = await axios.delete(this.baseUrl + "/api/poi/" + id);
             return response.data;
         } catch (e) {
             return null;
         }
     }
 
+    async authenticate(user) {
+        try {
+            const response = await axios.post(this.baseUrl + "/api/users/authenticate", user);
+            axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async clearAuth(user) {
+        axios.defaults.headers.common["Authorization"] = "";
+    }
 }
 
 
