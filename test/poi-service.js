@@ -85,7 +85,7 @@ class PoiService {
     }
     async getPoitsofinterest() {
         try {
-            const response = await axios.get(this.baseUrl + "/api/pointsofinterest");
+            const response = await axios.get(this.baseUrl + "/api/poi");
             return response.data;
         } catch (e) {
             return null;
@@ -94,16 +94,16 @@ class PoiService {
 
     async getPointofinterest(id) {
         try {
-            const response = await axios.get(this.baseUrl + "/api/pointsofinterest/" + id);
+            const response = await axios.get(this.baseUrl + "/api/poi/" + id);
             return response.data;
         } catch (e) {
             return null;
         }
     }
 
-    async createPointofinterest(newPoi) {
+    async createPointofinterest(newPointofinterest) {
         try {
-            const response = await axios.post(this.baseUrl + "/api/pointsofinterest", newPoi);
+            const response = await axios.post(this.baseUrl + "/api/poi", newPointofinterest);
             return response.data;
         } catch (e) {
             return null;
@@ -112,7 +112,7 @@ class PoiService {
 
     async deleteAllPointsofinterst() {
         try {
-            const response = await axios.delete(this.baseUrl + "/api/pointsofinterest");
+            const response = await axios.delete(this.baseUrl + "/api/poi");
             return response.data;
         } catch (e) {
             return null;
@@ -121,7 +121,7 @@ class PoiService {
 
     async deleteOnePointofinterst(id) {
         try {
-            const response = await axios.delete(this.baseUrl + "/api/pointsofinterest/" + id);
+            const response = await axios.delete(this.baseUrl + "/api/poi/" + id);
             return response.data;
         } catch (e) {
             return null;
