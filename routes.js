@@ -24,7 +24,6 @@ module.exports = [
 
     {method: 'GET',path: '/admindashboard', config: Admin.adminDashboard},
 
-
     { method: "GET", path: "/home", config: PointsOfInterest.home },
     { method: "GET", path: "/report", config: PointsOfInterest.report },
 
