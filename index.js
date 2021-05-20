@@ -6,6 +6,7 @@ const Vision = require("@hapi/vision");
 const Handlebars = require("handlebars");
 const Cookie = require("@hapi/cookie");
 const utils = require("./app/api/utils.js");
+const Bell = require('@hapi/bell');
 const Joi = require("@hapi/joi");
 require("./app/models/db");
 const env = require("dotenv");
@@ -36,6 +37,7 @@ async function init() {
     await server.register(Inert);
     await server.register(Vision);
     await server.register(Cookie);
+    await server.register(Bell);
     await server.register(require('hapi-auth-jwt2'));
 
     ImageStore.configure(credentials);
@@ -61,6 +63,20 @@ async function init() {
         },
         redirectTo: "/",
     });
+
+    var bellAuthOptions = {
+        provider: 'github',
+        password: 'github-encryption-password-secure', // String used to encrypt cookie
+        // used during authorisation steps only
+        clientId: '78949d886bb3dc286100',          // *** Replace with your app Client Id ****
+        clientSecret: 'bd1465cd2c00ca22d38e3cb0e407e34de9afefc3',  // *** Replace with your app Client Secret ***
+        isSecure: false        // Should be 'true' in production software (requires HTTPS)
+    };
+
+    server.auth.strategy('github-oauth', 'bell', bellAuthOptions);
+
+
+
 
     server.auth.strategy("jwt", "jwt", {
         key: "secretpasswordnotrevealedtoanyone",
