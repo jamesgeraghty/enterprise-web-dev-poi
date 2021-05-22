@@ -3,7 +3,7 @@
 
 
 ## Read Me
-James Geraghty 20022946 - Enterprise Website Development - POI Core
+James Geraghty 20022946 - Enterprise Website Development - POI Core -POI Service API - POI API Tests - POI client
 
 
 > **Delopyed**
@@ -13,7 +13,7 @@ James Geraghty 20022946 - Enterprise Website Development - POI Core
 ---
 > **Updated Version**
 ---
-The porject has developed in a more robust application that in includes a number of Comprehensive units tests.
+The project has developed in a more robust application that in includes a number of Comprehensive units tests.
 
 > **Description**
 ---
