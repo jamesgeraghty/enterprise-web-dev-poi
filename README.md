@@ -14,7 +14,7 @@ James Geraghty 20022946 - Enterprise Website Development - POI Core
 
 > **Description**
 ---
-This application allows the user to create a profile by entering a name, email address and password. The user can add and update points of interest and delete a point of interest as well as deleting their account.
+This application allows the user to create a profile by entering a name, email address and password. The user can add and update Points of Pnterest and delete a Point of Interest as well as deleting their account.
 Implemented the Core POI and some features from the enhanced.
 
 
