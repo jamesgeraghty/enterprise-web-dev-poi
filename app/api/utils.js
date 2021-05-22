@@ -20,6 +20,19 @@ exports.decodeToken = function (token) {
     return userInfo;
 };
 
+exports.getUserIdFromRequest = function (request) {
+    var userId = null;
+    try {
+        const authorization = request.headers.authorization;
+        var token = authorization.split(" ")[1];
+        var decodedToken = jwt.verify(token, "secretpasswordnotrevealedtoanyone");
+        userId = decodedToken.id;
+    } catch (e) {
+        userId = null;
+    }
+    return userId;
+};
+
 exports.validate = async function (decoded, request) {
     const user = await User.findOne({ _id: decoded.id });
     if (!user) {

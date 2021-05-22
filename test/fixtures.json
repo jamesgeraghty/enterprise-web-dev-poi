@@ -23,27 +23,19 @@
   "pointsofinterest": [
     {
       "name": "Slievenamon Walk",
-      "method": "8",
+      "method": "5",
       "latitude": 52.42818,
       "longitude": -7.56389,
       "text": "Through Kilcash and take the first left"
     },
     {
-      "name": "Grand Khaan",
-      "location": "Ulaanbaatar",
-      "latitude": 47.91379,
-      "longitude": 106.90622,
-      "image": "grandkhaan.jpg"
+      "name": "Slievenamon hike",
+      "method": "4",
+      "latitude": 52.40818,
+      "longitude": -7.51389,
+      "text": "Through Kilcash and take the first left"
     }
   ],
-
-
-
-
-
-
-
-
 
   "categories": [
     {
@@ -58,7 +50,7 @@
   ],
   "newCategory":
   {
-    "name": "Pub"
+    "name": "Hike"
 
   },
   "newUser": {
