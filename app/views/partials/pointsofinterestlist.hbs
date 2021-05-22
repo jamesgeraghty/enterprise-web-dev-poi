@@ -4,25 +4,22 @@
             <h2>Places of Interest in Kilcash</h2>
         </caption>
         <thead>
-        <th>Point of Interest</th>
-        <th>Location</th>
-        <th>Difficulty</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>User Name</th>
-        <th>Categories</th>
-        <th>Gallery</th>
-        <th> Delete</th>
-        <th> Update</th>
-
-
-
-        <th></th>
+        <th><h4>Name</h4></th>
+        <th><h4>Description</h4></th>
+        <th><h4>Rating (1 to 5)</h4></th>
+        <th><h4>Latitude</h4></th>
+        <th><h4>Longitude</h4></th>
+        <th><h4>Reviewer</h4></th>
+        <th><h4>Categories</h4></th>
+        <th><h4>Gallery</h4></th>
+        <th><h4> Delete</h4></th>
+        <th> <h4>Update</h4></th>
         </thead>
         <tbody class="uk-text-left">
         {{#each pointsofinterest}}
             <tr>
                 <td> {{poi}} </td>
+                <td> {{text}} </td>
                 <td> {{text}} </td>
                 <td> {{method}} </td>
                 <td> {{latitude}} </td>
@@ -32,10 +29,9 @@
                 <td><a href="/gallery" class="fas fa-camera fa-1x"></a></td>
 
                 <td><a href="/delete-pointofinterest/{{_id}}" ><i title="Delete Point Of Interest" class="far fa-trash-alt fa-1x"></i></td>
-               <td>
+                <td>
                     <a href='/update-pointofinterest/{{_id}}' > <i title="Delete Point Of Interest" class="far fa-edit fa-1x"></i>
-               </td>
-
+                </td>
             </tr>
         {{/each}}
         </tbody>
@@ -55,7 +51,9 @@
                 attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
             }).addTo(map);
                 {{#each pointsofinterest}}
-                var marker = L.marker ([{{latitude}}, {{longitude}}]).addTo(map);
+                markerPopup = L.popup().setContent("{{poi}}<br>{{description}}");
+                locationMarker = L.marker ([{{latitude}}, {{longitude}}], {
+                }).bindPopup(markerPopup).addTo(map);
                 {{/each}}
         </script>
     </div>
