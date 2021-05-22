@@ -4,25 +4,22 @@
             <h2>Places of Interest in Kilcash</h2>
         </caption>
         <thead>
-        <th>Point of Interest</th>
-        <th>Location</th>
-        <th>Difficulty</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>User Name</th>
-        <th>Categories</th>
-        <th>Gallery</th>
-        <th> Delete</th>
-        <th> Update</th>
-
-
-
-        <th></th>
+        <th><h4>Name</h4></th>
+        <th><h4>Description</h4></th>
+        <th><h4>Rating (1 to 5)</h4></th>
+        <th><h4>Latitude</h4></th>
+        <th><h4>Longitude</h4></th>
+        <th><h4>Reviewer</h4></th>
+        <th><h4>Categories</h4></th>
+        <th><h4>Gallery</h4></th>
+        <th><h4> Delete</h4></th>
+        <th> <h4>Update</h4></th>
         </thead>
         <tbody class="uk-text-left">
         {{#each pointsofinterest}}
             <tr>
                 <td> {{poi}} </td>
+                <td> {{text}} </td>
                 <td> {{text}} </td>
                 <td> {{method}} </td>
                 <td> {{latitude}} </td>
