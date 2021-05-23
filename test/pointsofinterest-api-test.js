@@ -8,16 +8,20 @@ const _ = require("lodash");
 suite("POI API tests", function () {
     let pointsofinterest = fixtures.pointsofinterest;
     let newPointsofinterest = fixtures.newPointsofinterest;
+    let newUser = fixtures.newUser;
 
     const poiService = new PoiService(fixtures.poiService);
 
-    setup(async function () {
-        await poiService.deleteAllPointsofinterst();
+    suiteSetup(async function () {
+        await poiService.deleteAllPointsofinterest();
+        const returnedUser = await poiService.createUser(newUser);
+        const response = await poiService.authenticate(newUser);
+    });
+    suiteTeardown(async function () {
+        await poiService.deleteAllUsers();
+        poiService.clearAuth();
     });
 
-    teardown(async function () {
-        await poiService.deleteAllPointsofinterst();
-    });
 
     test("Submit a POI", async function () {
         const returnedPoi = await poiService.createPointofinterest(newPointsofinterest);
