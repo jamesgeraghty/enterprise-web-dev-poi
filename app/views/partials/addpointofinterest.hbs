@@ -1,39 +1,51 @@
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default  uk-card-body uk-box-shadow-large">
+    <div class="eight wide column ">
+        {{> new-category}}
+    </div>
+</div>
+
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
     <form class="uk-form-stacked uk-text-left" action="/addpointofinterest" method="POST">
         <div class="uk-grid uk-grid-stack">
-            <div class="uk-width-1-2@m">
+            <div class="uk-width-1-1@m">
+                <div class="uk-width-1-1@m">
+                    <form>
+                        <fieldset class="uk-fieldset">
+                            <legend class="uk-legend">Add New Point of Interest</legend>
+                            <div class="uk-margin">
+                                <input type="text" name="poi" id="form-s-text" placeholder="Enter a new Point of Interest..." class="uk-input">
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="form-stacked-select">Select</label>
+                                <div class="uk-form-controls">
+                                    <select name="category" class="uk-select">
+                                        {{#each categories}}
+                                            <option value="{{name}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="uk-margin">
+                                    <input type="text" name="text" rows="5" id="form-s-text" placeholder="Description..." class="uk-input">
+                                </div>
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="form-stacked-select">Please Review from 1 to 5</label>
+                                    <input class="uk-range" type="range" value="0" min="0" max="5" step="1" name="method">
+                                </div>
+                                <div class="uk-margin">
+                                    <input type="number" step="any" name="latitude" rows="5" id="form-s-text" placeholder="Latitude" class="uk-input">
+                                </div>
+                                <div class="uk-margin">
+                                    <input type="number" step="any" name="longitude" rows="5" id="form-s-text" placeholder="longitutde" class="uk-input">
+                                </div>
+                        </fieldset>
+                    </form>
+                </div>
+
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Enter a Place of Interest</label><dl class="uk-description-list">
-                    <dt>DESCRIPTION TERM</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
-                </dl>
-
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="email">New Point Of Interest</label>
-                        <input type="text" name="amount" id="form-s-text" placeholder="Enter your E-Mail address..." class="uk-input">
-                    </div>
-                </div>
-                <div class="uk-margin">
-                    <div class="uk-form-label">Payment</div>
-                    <div class="uk-form-controls">
-                        <label><input class="uk-radio" type="radio" name="method" value="paypal" /> New</label><br />
-                        <label><input class="uk-radio" type="radio" name="method" value="direct" /> Old </label>
-                    </div>
-                </div>
-                <div class="column two wide"></div>
-
-                <div class="js-upload" uk-form-custom>
-                    <input type="file" name="image" multiple>
-                    <button class="uk-button uk-button-default" type="button" name="image" tabindex="-1">Upload Image</button>
-                </div>
-
-
-                    <div class="uk-margin">
-                    <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add</button>
+                    <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add Point of Interest</button>
                 </div>
             </div>
             <div class=" uk-width-1-2@m">
-
             </div>
         </div>
     </form>

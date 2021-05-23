@@ -1,0 +1,35 @@
+  <!DOCTYPE html>
+    <html>
+      <head>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <link rel="stylesheet" href="https://cdn.maptiler.com/ol/v6.0.0/ol.css" type="text/css">
+        <script src="https://cdn.maptiler.com/ol/v6.0.0/ol.js"></script>
+        <style>
+          #map {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+        </style>
+      </head>
+      <body>
+        <div id="map"></div><p><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></p>
+    <script>
+      var source = new ol.source.TileJSON({
+        url: 'https://api.maptiler.com/maps/basic/tiles.json?key=lf6wzg5OvtmWsOgoIj2t',
+        tileSize: 512,
+        crossOrigin: 'anonymous'
+      });
+
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: source
+          })
+        ],
+        target: 'map',
+        view: new ol.View({
+          constrainResolution: true,
+          center: ol.proj.fromLonLat([0, 0]),
+          zoom: 2
+        })
+      });
+    </script>
+      </body>
+    </html>

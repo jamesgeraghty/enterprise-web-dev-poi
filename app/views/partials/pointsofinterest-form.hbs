@@ -1,0 +1,34 @@
+<form class="ui segment form" action="/update_pointofinterest/{{newpointofinterest._id}}" method="POST">
+    <div class="uk-margin">
+        <div class="uk-inline uk-width-1-1">
+            <span class="uk-form-icon" uk-icon="icon: Settings"></span>
+            <input class="uk-input uk-form-large" type="text" name="poi" value="{{newpointofinterest.poi}}">
+        </div>
+    </div>
+    <div class="uk-margin">
+        <div class="uk-inline uk-width-1-1">
+            <label class="uk-form-label" for="form-stacked-select">Update your review from 1 to 5</label>
+            <input class="uk-range" type="range" value="0" min="0" max="5" step="1" name="method" value="{{newpointofinterest.method}}">
+        </div>
+    </div>
+    <div class="uk-margin">
+        <div class="uk-inline uk-width-1-1">
+            <span class="uk-form-icon" uk-icon="icon: settings"></span>
+            <input class="uk-input uk-form-large" type="text" name="text" value="{{newpointofinterest.text}}">
+        </div>
+    </div>
+    <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-select">Select</label>
+        <div class="uk-form-controls">
+            <select name="category" class="uk-select" value="{{newpointofinterest.category}}">
+                <option value="{{newpointofinterest.category.name}}"></option>
+                {{#each categories}}
+                    <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <div class="uk-margin">
+        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Update </button>
+    </div>
+</form>

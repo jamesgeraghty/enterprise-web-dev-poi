@@ -1,0 +1,81 @@
+{
+  "users": {
+    "_model": "User",
+    "homer": {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+<<<<<<< HEAD
+      "password": "123456789"
+=======
+      "password": "$2a$10$j.PqL/10Z3ppjH61Xh/vzOyi2UToh6lf5prz4rzljrPjDWJeHGYT2"
+>>>>>>> develop_3
+    },
+    "marge": {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+<<<<<<< HEAD
+      "password": "123456789"
+=======
+      "password": "$2a$10$j.PqL/10Z3ppjH61Xh/vzOyi2UToh6lf5prz4rzljrPjDWJeHGYT2"
+>>>>>>> develop_3
+    },
+    "bart": {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+<<<<<<< HEAD
+      "password": "123456789"
+=======
+      "password": "$2a$10$j.PqL/10Z3ppjH61Xh/vzOyi2UToh6lf5prz4rzljrPjDWJeHGYT2"
+>>>>>>> develop_3
+    }
+  },
+  "categories": {
+    "_model": "Category",
+    "walks": {
+      "name": "Slievenamon"
+
+    },
+    "woods": {
+      "name": "Kilcash Woods"
+
+    },
+
+  "church": {
+    "name": "Kilcash Church"
+  }
+  },
+
+  "pointsofinterest": {
+    "_model": "Newpointofinterest",
+    "one": {
+      "poi": "Slievenamon Walk",
+      "method": "5",
+      "latitude": "52.42818",
+      "longitude": "-7.56389",
+      "text": "Through Kilcash and take the first left",
+      "donor": "->users.homer",
+      "category": "->categories.walks"
+    },
+    "two": {
+      "poi": "Kilcash Woods 5 km loop",
+      "method": "5",
+      "latitude": "52.40342",
+      "longitude": "-7.54165",
+      "text": "Follow the directions to Kilcash Castle",
+      "donor": "->users.bart",
+      "category": "->categories.woods"
+    },
+    "three": {
+      "poi": "Kilcash church monument",
+      "method": "2",
+      "latitude": "52.3969",
+      "longitude": "-7.5227",
+      "text": "Follow the directions to Kilcash Castle",
+      "donor": "->users.marge",
+      "category": "->categories.church"
+    }
+  }
+}

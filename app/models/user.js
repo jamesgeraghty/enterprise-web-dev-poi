@@ -1,8 +1,9 @@
 "use strict";
 
 const Mongoose = require("mongoose");
-const Schema = Mongoose.Schema;
 const Boom = require("@hapi/boom");
+const Schema = Mongoose.Schema;
+const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
     firstName: String,
@@ -11,20 +12,15 @@ const userSchema = new Schema({
     password: String
 });
 
+userSchema.statics.findByEmail = function(email) {
+    return this.findOne({ email : email});
+};
 
-
-userSchema.methods.comparePassword = function(candidatePassword) {
-    const isMatch = this.password === candidatePassword;
+userSchema.methods.comparePassword = async function(candidatePassword) {
+    const isMatch = await bcrypt.compare(candidatePassword, this.password);
     if (!isMatch) {
         throw Boom.unauthorized('Password mismatch');
     }
     return this;
 };
-
-userSchema.statics.findByEmail = function(email) {
-    return this.findOne({ email : email});
-};
-
-
-
 module.exports = Mongoose.model("User", userSchema);
