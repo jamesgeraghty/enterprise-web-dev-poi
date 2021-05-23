@@ -6,7 +6,9 @@ const Boom = require("@hapi/boom");
 
 const Pointsofinterest = {
     find: {
-        auth: false,
+        auth: {
+            strategy: "jwt",
+        },
         handler: async function (request, h) {
             const pointsofinterest = await Newpointofinterest.find();
             return pointsofinterest;
@@ -14,7 +16,9 @@ const Pointsofinterest = {
     },
 
     findOne: {
-        auth: false,
+        auth: {
+            strategy: "jwt",
+        },
         handler: async function (request, h) {
             try {
                 const newpointofinterest = await Newpointofinterest.findOne({ _id: request.params.id });
@@ -29,7 +33,9 @@ const Pointsofinterest = {
     },
 
     findByCategory: {
-        auth: false,
+        auth: {
+            strategy: "jwt",
+        },
         handler: async function (request, h) {
             const pointsofinterest = await Newpointofinterest.find({ category: request.params.id });
             return pointsofinterest;
@@ -37,7 +43,9 @@ const Pointsofinterest = {
     },
 
     create: {
-        auth: false,
+        auth: {
+            strategy: "jwt",
+        },
         handler: async function (request, h) {
             const newPointofinterest = new Newpointofinterest(request.payload);
             const newpointofinterest = await newPointofinterest.save();
@@ -49,7 +57,9 @@ const Pointsofinterest = {
     },
 
     deleteAll: {
-        auth: false,
+        auth: {
+            strategy: "jwt",
+        },
         handler: async function (request, h) {
             await Newpointofinterest.deleteMany({});
             return { success: true };
@@ -57,7 +67,9 @@ const Pointsofinterest = {
     },
 
     deleteOne: {
-        auth: false,
+        auth: {
+            strategy: "jwt",
+        },
         handler: async function (request, h) {
             const newpointofinterest = await Newpointofinterest.remove({ _id: request.params.id });
             if (newpointofinterest) {

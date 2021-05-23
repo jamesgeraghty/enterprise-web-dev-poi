@@ -83,7 +83,7 @@ class PoiService {
             return null;
         }
     }
-    async getPoitsofinterest() {
+    async getPointsofinterest() {
         try {
             const response = await axios.get(this.baseUrl + "/api/poi");
             return response.data;
@@ -110,7 +110,7 @@ class PoiService {
         }
     }
 
-    async deleteAllPointsofinterst() {
+    async deleteAllPointsofinterest() {
         try {
             const response = await axios.delete(this.baseUrl + "/api/poi");
             return response.data;

@@ -11,7 +11,7 @@ suite("User API tests", function () {
 
     const poiService = new PoiService(fixtures.poiService);
 
-    suiteSetup(async function () {
+    setup(async function () {
         await poiService.deleteAllUsers();
         const returnedUser = await poiService.createUser(newUser);
         const response = await poiService.authenticate(newUser);
@@ -55,22 +55,23 @@ suite("User API tests", function () {
         }
 
         const allUsers = await poiService.getUsers();
-        assert.equal(allUsers.length, users.length);
+        assert.equal(allUsers.length, users.length+1);
     });
 
-    test("Get Users Detail", async function () {
+    test("get users details", async function () {
+        let arrUsers = [newUser];
         for (let u of users) {
-            await poiService.createUser(u);
+            const createdUser = await poiService.createUser(u);
+            arrUsers.push(createdUser);
         }
-
         const allUsers = await poiService.getUsers();
-        for (var i = 0; i < users.length; i++) {
-            assert(_.some([allUsers[i]], users[i]), "returnedUser must be a superset of newUser");
+        for (var i = 0; i < arrUsers.length; i++) {
+            assert(_.some([allUsers[i]], arrUsers[i]), "returnedCandidate must be a superset of newCandidate");
         }
     });
 
     test("Get All Users Empty", async function () {
         const allUsers = await poiService.getUsers();
-        assert.equal(allUsers.length, 0);
+        assert.equal(allUsers.length, 1);
     });
 });
