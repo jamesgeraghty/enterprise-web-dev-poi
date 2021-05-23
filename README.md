@@ -7,12 +7,9 @@ James Geraghty 20022946 - Enterprise Website Development - POI Core -POI Service
 
 
 > **Delopyed**
-<<<<<<< HEAD
-- [Glitch Deployed](https://wind-elderly-scraper.glitch.me/)
-- [heroku delpoyed](https://pois-app-2.herokuapp.com//)
-=======
+
 - [heroku delpoyed](https://pois-app-2.herokuapp.com/)
->>>>>>> origin/release_branch
+
 
 ---
 > **Updated Version**
