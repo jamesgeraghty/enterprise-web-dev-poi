@@ -6,25 +6,14 @@ const PointsOfInterest = require("./app/controllers/pointsofinterest");
 const Category =require("./app/controllers/categories-controller")
 const Admin = require("./app/controllers/admin");
 const Gallery = require('./app/controllers/gallery');
+const Notices =require('./app/controllers/notices');
 //const dashboard = require('./controllers/dashboard.js');
 
 module.exports = [
     { method: "GET", path: "/", config: Accounts.index },
     { method: "GET", path: "/signup", config: Accounts.showSignup },
      { method: "GET", path: "/login", config: Accounts.showLogin },
- //   { method: 'GET',
-     //   path: '/login',
-      //  config: {
-       //     auth: 'github-oauth',
-         //   handler: function (request, h) {
-          //     if (request.auth.isAuthenticated) {
-           //         request.cookieAuth.set(request.auth.credentials);
-           //         return h.view('home');
-           //     }
-           //     return ('Not logged in...');
-         //   }
-        //}
-   // },
+
     { method: "GET", path: "/logout", config: Accounts.logout },
     { method: "POST", path: "/signup", config: Accounts.signup },
     { method: "POST", path: "/login", config: Accounts.login },
@@ -44,13 +33,14 @@ module.exports = [
     {method: 'GET', path: '/update-pointofinterest/{_id}', config: PointsOfInterest.showUpdatePointofinterest},
     {method: 'POST', path: "/update_pointofinterest/{_id}", config: PointsOfInterest.updatePointofinterest},
 
-
-
     {method: 'POST', path: '/new-category', config: Category.addCategory},
-
 
     { method: 'GET', path: '/settings', config: Accounts.showSettings },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
+
+    { method: "GET", path: "/notice-home", config: Notices.noticehome },
+    { method: "POST", path: "/add-notice", config: Notices.addNotice },
+    { method: "GET", path: "/notice-report", config: Notices.Noticereport },
 
     {
         method: "GET",
