@@ -75,9 +75,6 @@ async function init() {
 
     server.auth.strategy('github-oauth', 'bell', bellAuthOptions);
 
-
-
-
     server.auth.strategy("jwt", "jwt", {
         key: "secretpasswordnotrevealedtoanyone",
         validate: utils.validate,
