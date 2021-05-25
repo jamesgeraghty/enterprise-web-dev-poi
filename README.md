@@ -19,7 +19,9 @@ The project has developed in a more robust application that in includes a number
 > **Description**
 ---
 This application allows the user to create a profile by entering a name, email address and password. The user can add and update Points of Pnterest and delete a Point of Interest as well as deleting their account.
-Implemented the Core POI and some features from the enhanced. The locatiosn featrie displays the points of interest on the 
+Implemented the Core POI and some features from the enhanced. The location feature displays the points of interest on a map.
+
+The notice allows the user to add notices to a notice board.
 
 
 <p>&nbsp;</p>
