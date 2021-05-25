@@ -68,5 +68,13 @@
       "donor": "->users.marge",
       "category": "->categories.church"
     }
+  },
+
+  "notices": {
+    "_model": "Notice",
+    "homer": {
+      "firstName": "Homer",
+      "notice": "The weather is bad on Friday"
+    }
   }
 }

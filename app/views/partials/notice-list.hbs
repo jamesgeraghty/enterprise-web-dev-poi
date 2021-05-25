@@ -1,18 +1,17 @@
 
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
     <table class="uk-table">
-        <caption>
-            Notices to Date
-        </caption>
         <thead>
-        <th>Method donated</th>
+        <th>Message</th>
         <th>User</th>
+        <th>Delete</th>
         </thead>
         <tbody class="uk-text-left">
         {{#each notices}}
             <tr>
                 <td>{{notice}}</td>
                 <td> {{donor.firstName}} {{donor.lastName}} </td>
+                <td><a href="/delete-notice/{{_id}}" ><i title="Delete Notice" class="far fa-trash-alt fa-1x"></i></td>
             </tr>
         {{/each}}
         </tbody>
