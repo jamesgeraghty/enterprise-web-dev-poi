@@ -41,6 +41,7 @@ module.exports = [
     { method: "GET", path: "/notice-home", config: Notices.noticehome },
     { method: "POST", path: "/add-notice", config: Notices.addNotice },
     { method: "GET", path: "/notice-report", config: Notices.Noticereport },
+    { method: "GET", path: "/delete-notice/{_id}", config: Notices.removenotice },
 
     {
         method: "GET",

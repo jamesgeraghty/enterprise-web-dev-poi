@@ -34,7 +34,22 @@ const Notices = {
                 return h.view("main", { errors: [{ message: err.message }] });
             }
         }
-    }
+    },
+
+    removenotice: {
+        handler: async function (request, h) {
+            try {
+                const notices = Notice.findById(request.params._id);
+                console.log("Removing notices: " + notices);
+                await notices.remove();
+                return h.redirect("/notice-report");
+            } catch
+                (err) {
+                return h.view('home', {errors: [{message: err.message}]});
+            }
+        },
+
+    },
 };
 
 module.exports = Notices;
