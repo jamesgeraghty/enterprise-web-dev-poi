@@ -74,7 +74,8 @@
     "_model": "Notice",
     "homer": {
       "firstName": "Homer",
-      "notice": "The weather is bad on Friday"
+      "donor": "->users.homer",
+      "notice": "The weather is bad on Friday, bring a waterproof coat."
     }
   }
 }
