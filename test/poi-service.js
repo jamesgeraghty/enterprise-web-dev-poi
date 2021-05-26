@@ -128,6 +128,54 @@ class PoiService {
         }
     }
 
+    async getNoticeboards() {
+        try {
+            const response = await axios.get(this.baseUrl + "/api/notice");
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async getNoticeboard(id) {
+        try {
+            const response = await axios.get(this.baseUrl + "/api/notice/" + id);
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async createNoticeboard(newNoticeboard) {
+        try {
+            const response = await axios.post(this.baseUrl + "/api/notice", newNoticeboard);
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async deleteAllNotices() {
+        try {
+            const response = await axios.delete(this.baseUrl + "/api/notice");
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async deleteOneNotice(id) {
+        try {
+            const response = await axios.delete(this.baseUrl + "/api/notice/" + id);
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+
+
+
     async authenticate(user) {
         try {
             const response = await axios.post(this.baseUrl + "/api/users/authenticate", user);
