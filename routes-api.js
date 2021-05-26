@@ -1,6 +1,7 @@
 const Categories = require('./app/api/categories');
 const Users = require("./app/api/users");
 const Pointsofinterest = require('./app/api/poi');
+const Noticeboards = require('./app/api/notice');
 
 
 module.exports = [
@@ -22,6 +23,13 @@ module.exports = [
     { method: "DELETE", path: "/api/poi/{id}", config: Pointsofinterest.deleteOne },
     { method: "DELETE", path: "/api/poi", config: Pointsofinterest.deleteAll },
 
-  { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate },
+    { method: "GET", path: "/api/notice", config: Noticeboards.find },
+    { method: "GET", path: "/api/notice/{id}", config: Noticeboards.findOne },
+    { method: "POST", path: "/api/notice", config: Noticeboards.create },
+    { method: "DELETE", path: "/api/notice/{id}", config: Noticeboards.deleteOne },
+    { method: "DELETE", path: "/api/notice", config: Noticeboards.deleteAll },
+
+
+    { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate },
 ];
 
